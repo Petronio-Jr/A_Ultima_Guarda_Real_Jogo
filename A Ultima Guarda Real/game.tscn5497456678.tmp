@@ -1,0 +1,328 @@
+[gd_scene load_steps=23 format=4 uid="uid://cupifx5xpj2fm"]
+
+[ext_resource type="Script" uid="uid://b3e4f5t4vl1gt" path="res://jogo souls like/Interativo/area_ponte.gd" id="3_16okt"]
+[ext_resource type="PackedScene" uid="uid://cb5lvtfe5r8hd" path="res://jogo souls like/Inimigos/tocha.tscn" id="4_gxyji"]
+[ext_resource type="PackedScene" uid="uid://dyrw6s1jomjke" path="res://jogo souls like/Personagens/arqueiro/character_3.tscn" id="4_lks8i"]
+[ext_resource type="PackedScene" uid="uid://b66ijurx55q6" path="res://jogo souls like/map.tscn" id="6_m1qs3"]
+[ext_resource type="PackedScene" uid="uid://c0cllc6d0tgy7" path="res://jogo souls like/Interativo/ovelha.tscn" id="6_wnwed"]
+[ext_resource type="Texture2D" uid="uid://swny3y43ejpw" path="res://jogo souls like/Sprites/Tiny Swords/Tiny Swords (Update 010)/Terrain/Bridge/Bridge_All.png" id="7_7hq6e"]
+[ext_resource type="PackedScene" uid="uid://um8wwthxxo08" path="res://jogo souls like/Sprites/Tiny Swords/Tiny Swords (Update 010)/Deco/cogumelo/cogumelo.tscn" id="9_gxyji"]
+[ext_resource type="PackedScene" uid="uid://doitarr5710m" path="res://jogo souls like/decoracoes/arvore1.tscn" id="11_0x63a"]
+[ext_resource type="PackedScene" uid="uid://ck4pgmwmsrdcw" path="res://jogo souls like/decoracoes/arbustos.tscn" id="11_dl450"]
+[ext_resource type="PackedScene" uid="uid://bs0sep7fivcgm" path="res://jogo souls like/decoracoes/placa_1.tscn" id="11_s4ve7"]
+[ext_resource type="PackedScene" uid="uid://coo6m7umdw32b" path="res://jogo souls like/decoracoes/arvore2.tscn" id="12_dl450"]
+[ext_resource type="PackedScene" uid="uid://dky4jufyhlb2v" path="res://jogo souls like/decoracoes/placa_2.tscn" id="12_s4ve7"]
+[ext_resource type="PackedScene" uid="uid://dm27so0dtd27b" path="res://jogo souls like/decoracoes/espantalho.tscn" id="13_lks8i"]
+[ext_resource type="PackedScene" uid="uid://b2cpkmwx7hgep" path="res://jogo souls like/Interativo/mina.tscn" id="14_lks8i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16okt"]
+texture = ExtResource("7_7hq6e")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31, -59, 35, -60, 36, -52, -30, -52)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, 13.547371, 32, 14.111847, 32, 19.756584, -32, 21.450005)
+2:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.094748, -32, -32, -32, -32, -32, -32, 32, -26.530273, 32)
+0:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(32, -32, 26.53027, -32, 27.659222, 32, 32, 32)
+0:3/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -25.965797, 32, -26.530273, 32, -32)
+2:1/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gxyji"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 9
+physics_layer_0/collision_mask = 9
+sources/0 = SubResource("TileSetAtlasSource_16okt")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxyji"]
+size = Vector2(1121, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16okt"]
+size = Vector2(57.5, 1016)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl450"]
+size = Vector2(264.625, 796.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4ve7"]
+size = Vector2(895.25, 763.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lks8i"]
+size = Vector2(3794.5, 159)
+
+[sub_resource type="GDScript" id="GDScript_0x63a"]
+
+[node name="Game" type="Node2D"]
+
+[node name="map" parent="." instance=ExtResource("6_m1qs3")]
+
+[node name="Ponte" type="TileMapLayer" parent="."]
+position = Vector2(0, -3)
+tile_map_data = PackedByteArray("AAA1ABIAAAAAAAAAAAA2ABIAAAABAAAAAAA3ABIAAAABAAAAAAA4ABIAAAABAAAAAAA5ABIAAAABAAAAAAA6ABIAAAABAAAAAAA7ABIAAAABAAAAAAA8ABIAAAABAAAAAAA9ABIAAAABAAAAAAA+ABIAAAABAAAAAAA/ABIAAAABAAAAAABAABIAAAABAAAAAABBABIAAAABAAAAAABCABIAAAABAAAAAABDABIAAAABAAAAAABEABIAAAABAAAAAABFABIAAAABAAAAAABGABIAAAABAAAAAABHABIAAAACAAAAAAAoABgAAAAAAAEAAAAoABkAAAAAAAIAAAAoABoAAAAAAAIAAAAoABsAAAAAAAIAAAAoABwAAAAAAAIAAAAoAB0AAAAAAAIAAAAoAB4AAAAAAAIAAAAoAB8AAAAAAAIAAAAoACAAAAAAAAIAAAAoACEAAAAAAAIAAAAoACIAAAAAAAIAAAAoACMAAAAAAAIAAAAoACQAAAAAAAIAAAAoACUAAAAAAAIAAAAoACYAAAAAAAIAAAAoACcAAAAAAAIAAAAwAAYAAAAAAAMAAAAwAAUAAAAAAAIAAAAwAAQAAAAAAAIAAAAwAAMAAAAAAAIAAAAwAAIAAAAAAAIAAAAwAAEAAAAAAAIAAAAwAAAAAAAAAAIAAAAwAP//AAAAAAIAAAAwAP7/AAAAAAIAAAAwAP3/AAAAAAIAAAAwAPz/AAAAAAIAAAAwAPv/AAAAAAIAAAAwAPr/AAAAAAIAAAAwAPn/AAAAAAIAAAAwAPj/AAAAAAIAAAAwAPf/AAAAAAIAAAAwAPb/AAAAAAEAAAAoACgAAAAAAAIAAAAoACkAAAABAAIAAAA=")
+tile_set = SubResource("TileSet_gxyji")
+
+[node name="Area_Ponte" type="Area2D" parent="Ponte"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("3_16okt")
+
+[node name="Colisao_p1" type="CollisionShape2D" parent="Ponte/Area_Ponte"]
+position = Vector2(4000.5, 1182)
+shape = SubResource("RectangleShape2D_gxyji")
+
+[node name="Colisao_p2" type="CollisionShape2D" parent="Ponte/Area_Ponte"]
+position = Vector2(2592.25, 2079)
+shape = SubResource("RectangleShape2D_16okt")
+
+[node name="Colisao_p3" type="CollisionShape2D" parent="Ponte/Area_Ponte"]
+position = Vector2(3104, -102)
+shape = SubResource("RectangleShape2D_16okt")
+
+[node name="Caverna" type="TileMapLayer" parent="."]
+
+[node name="percurso_caverna" type="Area2D" parent="Caverna"]
+
+[node name="area1" type="CollisionShape2D" parent="Caverna/percurso_caverna"]
+position = Vector2(5826, -2891.625)
+shape = SubResource("RectangleShape2D_dl450")
+debug_color = Color(0.76270723, 0.58994955, 0.13214377, 0.41960785)
+
+[node name="area2" type="CollisionShape2D" parent="Caverna/percurso_caverna"]
+position = Vector2(5382.25, -2875.75)
+shape = SubResource("RectangleShape2D_s4ve7")
+debug_color = Color(0.69661593, 0.4880094, 0.22765443, 0.41960785)
+
+[node name="area3" type="CollisionShape2D" parent="Caverna/percurso_caverna"]
+position = Vector2(3040.25, -2966)
+shape = SubResource("RectangleShape2D_lks8i")
+debug_color = Color(0.64505064, 0.5162255, 0.23436782, 0.41960785)
+
+[node name="Decoration" type="Node2D" parent="."]
+y_sort_enabled = true
+script = SubResource("GDScript_0x63a")
+
+[node name="Arqueiro" parent="Decoration" instance=ExtResource("4_lks8i")]
+position = Vector2(3148, -787)
+velocidade = 256.0
+
+[node name="Tocha" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(3614, -1122)
+
+[node name="Tocha2" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(1573, -424)
+
+[node name="Tocha3" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(4114, -1657)
+
+[node name="Tocha4" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(2231, -925)
+
+[node name="ovelha" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(2935, -718)
+
+[node name="Cogumelo" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3320, 1320)
+
+[node name="Cogumelo2" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(2984, 1328)
+
+[node name="Cogumelo3" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3128, 968)
+
+[node name="arbustos" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2176, -750)
+
+[node name="arbustos2" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(3182, -1142)
+
+[node name="Arvore2" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2803, 651)
+
+[node name="Arvore1_4" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(2355, 950)
+
+[node name="Arvore2_1" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2945, -1054)
+
+[node name="Arvore2_2" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2750, -1310)
+
+[node name="Arvore2_4" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(4508, -875)
+
+[node name="Arvore2_32" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5208, -1691)
+
+[node name="Arvore2_33" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5286, -1685)
+
+[node name="Arvore2_34" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5373, -1687)
+
+[node name="Arvore2_35" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5456, -1688)
+
+[node name="Arvore2_37" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5628, -1688)
+
+[node name="Arvore2_38" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5715, -1685)
+
+[node name="Arvore2_39" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5793, -1683)
+
+[node name="Arvore2_40" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5880, -1685)
+
+[node name="Arvore2_41" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5969, -1683)
+
+[node name="Arvore2_42" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6065, -1685)
+
+[node name="Arvore2_43" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6165, -1683)
+
+[node name="Arvore2_44" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6268, -1687)
+
+[node name="Arvore2_45" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6346, -1689)
+
+[node name="Arvore2_5" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(3952, -1308)
+
+[node name="Arvore2_6" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(4489, -1585)
+
+[node name="Arvore2_7" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2498, -834)
+
+[node name="Arvore2_8" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1788, -709)
+
+[node name="Arvore2_9" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2357, -1407)
+
+[node name="Arvore2_10" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1026, -39)
+
+[node name="Arvore2_30" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1112, -41)
+
+[node name="Arvore2_31" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(935, -41)
+
+[node name="Arvore2_11" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1717, -43)
+
+[node name="Arvore2_12" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1202, -43)
+
+[node name="Arvore2_13" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1293, -43)
+
+[node name="Arvore2_14" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1388, -39)
+
+[node name="Arvore2_15" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1632, -41)
+
+[node name="Arvore2_16" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1552, -40)
+
+[node name="Arvore2_17" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1472, -38)
+
+[node name="Arvore2_18" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1876, -45)
+
+[node name="Arvore2_19" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2136, -46)
+
+[node name="Arvore2_20" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2043, -47)
+
+[node name="Arvore2_21" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1799, -42)
+
+[node name="Arvore2_22" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1961, -45)
+
+[node name="Arvore2_23" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2230, -43)
+
+[node name="Arvore2_24" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2310, -431)
+
+[node name="Arvore2_25" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2307, -343)
+
+[node name="Arvore2_26" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2307, -255)
+
+[node name="Arvore2_27" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2307, -180)
+
+[node name="Arvore2_28" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2307, -120)
+
+[node name="Arvore2_29" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2310, -67)
+
+[node name="Arvore1" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(2574, 1124)
+
+[node name="Arvore3" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(3037, 1023)
+
+[node name="Arvore2_36" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5545, -1686)
+
+[node name="Arvores" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(1925, 1070)
+
+[node name="Placa_1" parent="Decoration" instance=ExtResource("11_s4ve7")]
+position = Vector2(2756, 1420)
+
+[node name="Placa_2" parent="Decoration" instance=ExtResource("12_s4ve7")]
+position = Vector2(3433, -896)
+
+[node name="Espantalho" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(3010, 790)
+
+[node name="Espantalho2" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(3076, 1541)
+
+[node name="arbustos3" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2551, -1139)
+
+[node name="arbustos5" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2024, -1400)
+
+[node name="Espantalho3" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(3751, -1755)
+
+[node name="Placa_3" parent="Decoration" instance=ExtResource("11_s4ve7")]
+position = Vector2(5616, -2341)
+
+[node name="Placa_4" parent="Decoration" instance=ExtResource("12_s4ve7")]
+position = Vector2(4570, -2229)
+
+[node name="arbustos6" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2565, 546)
+
+[node name="arbustos4" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(4275, -1130)
+
+[node name="Mina" parent="Decoration" instance=ExtResource("14_lks8i")]
+position = Vector2(5398, 866)
+
+[connection signal="body_entered" from="Ponte/Area_Ponte" to="Ponte/Area_Ponte" method="_on_body_entered"]
+[connection signal="body_exited" from="Ponte/Area_Ponte" to="Ponte/Area_Ponte" method="_on_body_exited"]

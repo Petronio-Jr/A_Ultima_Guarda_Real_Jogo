@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://dha34pxatmbrx"]
+
+[ext_resource type="Texture2D" uid="uid://bi8ykce3h8xf0" path="res://A Ultima Guarda Real/Pixel Art Animated Portal/sprite-sheet.png" id="1_tay8m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx3p5"]
+atlas = ExtResource("1_tay8m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o4mj"]
+atlas = ExtResource("1_tay8m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lido7"]
+atlas = ExtResource("1_tay8m")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjqxd"]
+atlas = ExtResource("1_tay8m")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsn2l"]
+atlas = ExtResource("1_tay8m")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct6ou"]
+atlas = ExtResource("1_tay8m")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b2hs"]
+atlas = ExtResource("1_tay8m")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrtbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx3p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o4mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lido7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjqxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsn2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct6ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b2hs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="portal" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lrtbs")
+autoplay = "default"
+frame_progress = 0.13624649

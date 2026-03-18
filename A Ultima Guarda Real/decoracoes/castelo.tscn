@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmgknan4ap455"]
+
+[ext_resource type="Texture2D" uid="uid://v1b456f8qr2p" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Buildings/Black Buildings/Castle.png" id="1_0fupo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60tlm"]
+size = Vector2(279, 140)
+
+[node name="castelo" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_0fupo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 29)
+shape = SubResource("RectangleShape2D_60tlm")

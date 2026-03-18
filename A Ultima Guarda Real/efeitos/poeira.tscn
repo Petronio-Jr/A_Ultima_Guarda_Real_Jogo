@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://8av7o4fxhrtv"]
+
+[ext_resource type="Texture2D" uid="uid://c1cag2ly6sk8b" path="res://A Ultima Guarda Real/Interface/dust.png" id="1_uyabc"]
+
+[sub_resource type="Curve" id="Curve_lfcsb"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0.00047171116), 0.0, 0.0, 0, 0, Vector2(0.24815725, 2), 0.0, 0.0, 0, 0, Vector2(0.7542998, 1), 0.0, 0.0, 0, 0, Vector2(0.9950861, 0.01886785), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_n5rgq"]
+offsets = PackedFloat32Array(0, 0.53543305, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="poeira" type="CPUParticles2D"]
+emitting = false
+amount = 16
+texture = ExtResource("1_uyabc")
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_lfcsb")
+color_ramp = SubResource("Gradient_n5rgq")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgtg77mrfuomq"]
+
+[ext_resource type="Script" uid="uid://cmnssw8dgikl1" path="res://A Ultima Guarda Real/Personagens/character_base.gd" id="1_fkktx"]
+[ext_resource type="PackedScene" uid="uid://8av7o4fxhrtv" path="res://A Ultima Guarda Real/efeitos/poeira.tscn" id="2_l6wi5"]
+
+[node name="CharacterBase" type="CharacterBody2D" node_paths=PackedStringArray("poeira", "sprite", "anim")]
+collision_layer = 9
+collision_mask = 13
+script = ExtResource("1_fkktx")
+poeira = NodePath("poeira")
+sprite = NodePath("Textura")
+anim = NodePath("Animacao")
+
+[node name="Textura" type="Sprite2D" parent="."]
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+
+[node name="Animacao" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+
+[node name="Area_ataque" type="Area2D" parent="."]
+
+[node name="poeira" parent="." instance=ExtResource("2_l6wi5")]
+
+[connection signal="animation_finished" from="Animacao" to="." method="_on_animacao_animation_finished"]
+[connection signal="body_entered" from="Area_ataque" to="." method="_on_area_ataque_body_entered"]

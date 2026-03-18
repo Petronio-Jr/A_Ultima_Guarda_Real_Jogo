@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://doitarr5710m"]
+
+[ext_resource type="Texture2D" uid="uid://dv2ojuog4kp3w" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Trees/Tree3.png" id="1_nvmmj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6x3m"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hekrc"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt8l4"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a58jh"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsqv7"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyakp"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54xnw"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmc3v"]
+atlas = ExtResource("1_nvmmj")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xh87h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6x3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hekrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt8l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a58jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsqv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyakp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54xnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmc3v")
+}],
+"loop": true,
+"name": &"arvore1",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijul6"]
+size = Vector2(15, 19)
+
+[node name="Arvore1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -67)
+sprite_frames = SubResource("SpriteFrames_xh87h")
+animation = &"arvore1"
+autoplay = "arvore1"
+frame_progress = 0.5056366
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CharacterBody2D"]
+position = Vector2(0.5, 57.5)
+shape = SubResource("RectangleShape2D_ijul6")

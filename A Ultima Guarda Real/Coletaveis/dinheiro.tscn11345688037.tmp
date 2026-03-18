@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfwfsjh3dfixp"]
+
+[ext_resource type="PackedScene" uid="uid://p4flv1m0fglx" path="res://jogo souls like/Coletaveis/coletaveis.tscn" id="1_xm77j"]
+[ext_resource type="Texture2D" uid="uid://blgw44yrff3go" path="res://jogo souls like/Coletaveis/Resources/G_Spawn.png" id="2_gamgm"]
+[ext_resource type="Script" uid="uid://d36yqkem7rk5s" path="res://jogo souls like/Coletaveis/dinheiro.gd" id="2_vfbny"]
+
+[sub_resource type="Animation" id="Animation_oig2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_h4rad"]
+resource_name = "surgir"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ssjf"]
+_data = {
+&"RESET": SubResource("Animation_oig2r"),
+&"surgir": SubResource("Animation_h4rad")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xm77j"]
+radius = 21.0
+
+[node name="dinheiro" instance=ExtResource("1_xm77j")]
+script = ExtResource("2_vfbny")
+
+[node name="Textura" parent="." index="0"]
+position = Vector2(-3, -13)
+texture = ExtResource("2_gamgm")
+hframes = 7
+
+[node name="Animacao" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_8ssjf")
+}
+autoplay = "surgir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_xm77j")

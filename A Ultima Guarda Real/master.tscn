@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjmjv63a6y6jd"]
+
+[ext_resource type="PackedScene" uid="uid://cupifx5xpj2fm" path="res://A Ultima Guarda Real/game.tscn" id="1_lv8w1"]
+
+[node name="Master" type="Node2D"]
+
+[node name="Game" parent="." instance=ExtResource("1_lv8w1")]
+position = Vector2(-8, -42)

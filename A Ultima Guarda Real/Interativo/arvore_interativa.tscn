@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://crjrjsg2x0ha6"]
+
+[ext_resource type="Script" uid="uid://dgehlevoe580e" path="res://arvore_interativa.gd" id="1_w5dm0"]
+[ext_resource type="Texture2D" uid="uid://dmclvgpdseow4" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Trees/Tree1.png" id="2_onuj6"]
+
+[sub_resource type="Animation" id="Animation_u5hdb"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_rvua1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_buk6p"]
+_data = {
+&"RESET": SubResource("Animation_rvua1"),
+&"idle": SubResource("Animation_u5hdb")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmjbn"]
+size = Vector2(37.5, 42)
+
+[node name="Arvore_interativa" type="StaticBody2D" node_paths=PackedStringArray("anim")]
+script = ExtResource("1_w5dm0")
+anim = NodePath("Animacao")
+
+[node name="Textura" type="Sprite2D" parent="."]
+position = Vector2(3, -105)
+texture = ExtResource("2_onuj6")
+hframes = 8
+
+[node name="Animacao" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_buk6p")
+}
+autoplay = "idle"
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(4, -21)
+shape = SubResource("RectangleShape2D_mmjbn")
+
+[connection signal="animation_finished" from="Animacao" to="." method="_on_animacao_animation_finished"]

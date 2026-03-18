@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm27so0dtd27b"]
+
+[ext_resource type="PackedScene" uid="uid://b58kr6hf10kp5" path="res://A Ultima Guarda Real/decoracoes/Placas.tscn" id="1_jidv6"]
+[ext_resource type="Texture2D" uid="uid://c6og838tp7fvn" path="res://A Ultima Guarda Real/decoracoes/placas/18.png" id="2_86u6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnnrh"]
+
+[node name="Espantalho" instance=ExtResource("1_jidv6")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-2, -69)
+texture = ExtResource("2_86u6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/CharacterBody2D" index="0"]
+position = Vector2(1, 58)
+shape = SubResource("RectangleShape2D_lnnrh")

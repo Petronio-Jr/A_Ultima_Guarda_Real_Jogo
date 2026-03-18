@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c38wxixdpv1nk"]
+
+[ext_resource type="Script" uid="uid://c10y7w6q0g8ic" path="res://A Ultima Guarda Real/barra_vida.gd" id="1_xp0hw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbn7r"]
+bg_color = Color(0.17641911, 0.17641908, 0.17641908, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp0hw"]
+bg_color = Color(1, 0, 0.24705882, 1)
+
+[node name="BarraVida" type="ProgressBar"]
+offset_top = 1.0
+offset_right = 193.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kbn7r")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xp0hw")
+value = 80.0
+show_percentage = false
+script = ExtResource("1_xp0hw")

@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://8s74242nwmlj"]
+
+[ext_resource type="PackedScene" uid="uid://p4flv1m0fglx" path="res://A Ultima Guarda Real/Coletaveis/coletaveis.tscn" id="1_eaw8e"]
+[ext_resource type="Texture2D" uid="uid://elbtil7kdo6a" path="res://A Ultima Guarda Real/Coletaveis/Resources/M_Spawn.png" id="2_136jm"]
+
+[sub_resource type="Animation" id="Animation_ym7no"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_r5eyj"]
+resource_name = "spawn"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opq08"]
+_data = {
+&"RESET": SubResource("Animation_ym7no"),
+&"spawn": SubResource("Animation_r5eyj")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eaw8e"]
+radius = 20.024984
+
+[node name="Carne" instance=ExtResource("1_eaw8e")]
+tipo = "carne"
+
+[node name="Textura" parent="." index="0"]
+position = Vector2(-2, -13)
+texture = ExtResource("2_136jm")
+hframes = 7
+
+[node name="Animacao" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_opq08")
+}
+autoplay = "spawn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_eaw8e")

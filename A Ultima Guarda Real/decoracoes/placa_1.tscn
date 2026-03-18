@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs0sep7fivcgm"]
+
+[ext_resource type="PackedScene" uid="uid://b58kr6hf10kp5" path="res://A Ultima Guarda Real/decoracoes/Placas.tscn" id="1_aah7g"]
+[ext_resource type="Texture2D" uid="uid://bi63d5sl77kc8" path="res://A Ultima Guarda Real/decoracoes/placas/16.png" id="2_ko30y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck8nj"]
+
+[node name="Placa_1" instance=ExtResource("1_aah7g")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-3, -38)
+texture = ExtResource("2_ko30y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/CharacterBody2D" index="0"]
+position = Vector2(4, 27)
+shape = SubResource("RectangleShape2D_ck8nj")

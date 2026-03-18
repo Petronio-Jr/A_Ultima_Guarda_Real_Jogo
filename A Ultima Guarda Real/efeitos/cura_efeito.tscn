@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw65868spxyim"]
+
+[ext_resource type="Script" uid="uid://c1qtxj7m7lp7a" path="res://cura_efeito.gd" id="1_o3b1e"]
+[ext_resource type="Texture2D" uid="uid://cjitj2aexfy4v" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Yellow Units/Monk/Heal_Effect.png" id="2_3cyr2"]
+
+[sub_resource type="Animation" id="Animation_k05fw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_okecq"]
+resource_name = "efeito_cura"
+length = 1.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dm5j"]
+_data = {
+&"RESET": SubResource("Animation_k05fw"),
+&"efeito_cura": SubResource("Animation_okecq")
+}
+
+[node name="Cura_efeito" type="Node2D" node_paths=PackedStringArray("anim")]
+script = ExtResource("1_o3b1e")
+anim = NodePath("Animacao")
+
+[node name="Textura" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+texture = ExtResource("2_3cyr2")
+hframes = 11
+
+[node name="Animacao" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6dm5j")
+}

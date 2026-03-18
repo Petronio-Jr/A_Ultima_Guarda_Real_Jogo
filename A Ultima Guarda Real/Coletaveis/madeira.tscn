@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://w568qioqv0nf"]
+
+[ext_resource type="PackedScene" uid="uid://p4flv1m0fglx" path="res://A Ultima Guarda Real/Coletaveis/coletaveis.tscn" id="1_ffgo2"]
+[ext_resource type="Texture2D" uid="uid://cihnwbv50n0a7" path="res://A Ultima Guarda Real/Coletaveis/Resources/W_Spawn.png" id="1_xow1f"]
+
+[sub_resource type="Animation" id="Animation_vxhj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pabyn"]
+resource_name = "spawn"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0qx4"]
+_data = {
+&"RESET": SubResource("Animation_vxhj8"),
+&"spawn": SubResource("Animation_pabyn")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffgo2"]
+radius = 27.073973
+
+[node name="Madeira" instance=ExtResource("1_ffgo2")]
+tipo = "madeira"
+
+[node name="Textura" parent="." index="0"]
+position = Vector2(-1, -29)
+texture = ExtResource("1_xow1f")
+hframes = 7
+
+[node name="Animacao" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_a0qx4")
+}
+autoplay = "spawn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-3, -10)
+shape = SubResource("CircleShape2D_ffgo2")

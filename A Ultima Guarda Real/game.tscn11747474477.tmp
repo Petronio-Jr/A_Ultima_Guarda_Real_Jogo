@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cupifx5xpj2fm"]
+
+[ext_resource type="PackedScene" uid="uid://dx1qbs32v3vqv" path="res://jogo souls like/character_1.tscn" id="1_opnga"]
+[ext_resource type="PackedScene" uid="uid://dvixmyboojh0k" path="res://jogo souls like/character_2.tscn" id="2_er7rb"]
+[ext_resource type="PackedScene" uid="uid://dyrw6s1jomjke" path="res://jogo souls like/character_3.tscn" id="3_m1qs3"]
+[ext_resource type="PackedScene" uid="uid://b2ojlup81yfhv" path="res://jogo souls like/character_4.tscn" id="4_7hq6e"]
+[ext_resource type="PackedScene" uid="uid://b66ijurx55q6" path="res://jogo souls like/map.tscn" id="6_m1qs3"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Character_1" parent="." instance=ExtResource("1_opnga")]
+position = Vector2(58, -53)
+collision_mask = 2
+
+[node name="Character_2" parent="." instance=ExtResource("2_er7rb")]
+position = Vector2(-50, 35)
+collision_layer = 5
+collision_mask = 2
+
+[node name="Character_3" parent="." instance=ExtResource("3_m1qs3")]
+position = Vector2(60, 42)
+collision_layer = 5
+collision_mask = 2
+
+[node name="Character_4" parent="." instance=ExtResource("4_7hq6e")]
+position = Vector2(-36, -67)
+collision_layer = 5
+collision_mask = 2
+
+[node name="map" parent="." instance=ExtResource("6_m1qs3")]

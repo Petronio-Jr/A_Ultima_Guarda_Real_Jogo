@@ -1,0 +1,286 @@
+[gd_scene load_steps=13 format=3 uid="uid://cb5lvtfe5r8hd"]
+
+[ext_resource type="PackedScene" uid="uid://b235xmhaar148" path="res://A Ultima Guarda Real/Inimigos/enemy_base.tscn" id="1_mbtlr"]
+[ext_resource type="Texture2D" uid="uid://bgm27iolo5yd7" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Red/Sprite-0001-Sheet.png" id="2_s25h6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jch2"]
+size = Vector2(34, 50)
+
+[sub_resource type="Animation" id="Animation_cvftj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area_ataque/ColisaoAtaque:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area_ataque/ColisaoAtaque:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textura:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cffnc"]
+resource_name = "andando"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area_ataque/ColisaoAtaque:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1syqo"]
+resource_name = "ataque"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area_ataque/ColisaoAtaque:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area_ataque/ColisaoAtaque:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_s25h6"]
+resource_name = "dano"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [12, 13, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textura:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area_ataque/ColisaoAtaque:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wv7ho"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area_ataque/ColisaoAtaque:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dpvj8"]
+resource_name = "morte"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.19999999, 0.3, 0.40000004, 0.50000006, 0.59999996, 0.7, 0.8, 0.90000004, 1, 1.0999999, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area_ataque/ColisaoAtaque:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tjk66"]
+_data = {
+&"RESET": SubResource("Animation_cvftj"),
+&"andando": SubResource("Animation_cffnc"),
+&"ataque": SubResource("Animation_1syqo"),
+&"dano": SubResource("Animation_s25h6"),
+&"idle": SubResource("Animation_wv7ho"),
+&"morte": SubResource("Animation_dpvj8")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1kdd"]
+radius = 332.0015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7h4o"]
+size = Vector2(57, 92)
+
+[node name="Tocha" node_paths=PackedStringArray("poeira", "anim", "sprite", "area_colisao_ataque", "tempo_entre_ataques") instance=ExtResource("1_mbtlr")]
+collision_layer = 9
+collision_mask = 29
+poeira = NodePath("poeira")
+anim = NodePath("Animacao")
+sprite = NodePath("Textura")
+area_colisao_ataque = NodePath("Area_ataque/ColisaoAtaque")
+tempo_entre_ataques = NodePath("TimerAtaque")
+
+[node name="Textura" parent="." index="0"]
+texture = ExtResource("2_s25h6")
+hframes = 6
+vframes = 8
+
+[node name="Colisao" parent="." index="1"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_6jch2")
+
+[node name="Animacao" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_tjk66")
+}
+
+[node name="AreaPerseguicao" type="Area2D" parent="." index="3"]
+show_behind_parent = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPerseguicao" index="0"]
+shape = SubResource("CircleShape2D_c1kdd")
+
+[node name="TimerAtaque" type="Timer" parent="." index="4"]
+wait_time = 0.089
+one_shot = true
+
+[node name="ColisaoAtaque" type="CollisionShape2D" parent="Area_ataque" index="0"]
+position = Vector2(67, -9)
+shape = SubResource("RectangleShape2D_n7h4o")
+
+[node name="poeira" parent="." index="6"]
+position = Vector2(-1, 36)
+emitting = false
+
+[connection signal="body_entered" from="AreaPerseguicao" to="." method="_on_area_perseguicao_body_entered"]
+[connection signal="body_exited" from="AreaPerseguicao" to="." method="_on_area_perseguicao_body_exited"]
+[connection signal="timeout" from="TimerAtaque" to="." method="_on_tempo_entre_ataques_timeout"]
+[connection signal="body_entered" from="Area_ataque" to="." method="_on_area_ataque_body_entered"]

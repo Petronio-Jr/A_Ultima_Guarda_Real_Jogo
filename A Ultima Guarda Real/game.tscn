@@ -1,0 +1,1291 @@
+[gd_scene load_steps=98 format=4 uid="uid://cupifx5xpj2fm"]
+
+[ext_resource type="Script" uid="uid://bl113tvl8o5rh" path="res://A Ultima Guarda Real/game.gd" id="1_3fhln"]
+[ext_resource type="Script" uid="uid://b3e4f5t4vl1gt" path="res://A Ultima Guarda Real/Interativo/area_ponte.gd" id="3_16okt"]
+[ext_resource type="Script" uid="uid://b61l73r4yucnl" path="res://A Ultima Guarda Real/area_portal.gd" id="3_dbyoy"]
+[ext_resource type="Script" uid="uid://ckisrq4ncbufh" path="res://A Ultima Guarda Real/area_portal_2.gd" id="3_wvtou"]
+[ext_resource type="PackedScene" uid="uid://dyrw6s1jomjke" path="res://A Ultima Guarda Real/Personagens/arqueiro/Arqueiro.tscn" id="4_1abhl"]
+[ext_resource type="PackedScene" uid="uid://blrf7aavdiuqs" path="res://A Ultima Guarda Real/Personagens/Guerreiro/guerreiro.tscn" id="4_16okt"]
+[ext_resource type="PackedScene" uid="uid://cb5lvtfe5r8hd" path="res://A Ultima Guarda Real/Inimigos/tocha.tscn" id="4_gxyji"]
+[ext_resource type="Script" uid="uid://cea13l1kc7ptj" path="res://A Ultima Guarda Real/percurso_caverna.gd" id="4_r8flx"]
+[ext_resource type="PackedScene" uid="uid://b66ijurx55q6" path="res://A Ultima Guarda Real/map.tscn" id="6_m1qs3"]
+[ext_resource type="PackedScene" uid="uid://c0cllc6d0tgy7" path="res://A Ultima Guarda Real/Interativo/ovelha.tscn" id="6_wnwed"]
+[ext_resource type="Texture2D" uid="uid://swny3y43ejpw" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Terrain/Bridge/Bridge_All.png" id="7_7hq6e"]
+[ext_resource type="PackedScene" uid="uid://um8wwthxxo08" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Deco/cogumelo/cogumelo.tscn" id="9_gxyji"]
+[ext_resource type="Script" uid="uid://dojs75nmkxg41" path="res://A Ultima Guarda Real/area_batalha_boss.gd" id="9_swmc3"]
+[ext_resource type="PackedScene" uid="uid://dha34pxatmbrx" path="res://A Ultima Guarda Real/portal_sprite.tscn" id="10_wvtou"]
+[ext_resource type="PackedScene" uid="uid://doitarr5710m" path="res://A Ultima Guarda Real/decoracoes/arvore1.tscn" id="11_0x63a"]
+[ext_resource type="PackedScene" uid="uid://ck4pgmwmsrdcw" path="res://A Ultima Guarda Real/decoracoes/arbustos.tscn" id="11_dl450"]
+[ext_resource type="PackedScene" uid="uid://bs0sep7fivcgm" path="res://A Ultima Guarda Real/decoracoes/placa_1.tscn" id="11_s4ve7"]
+[ext_resource type="PackedScene" uid="uid://coo6m7umdw32b" path="res://A Ultima Guarda Real/decoracoes/arvore2.tscn" id="12_dl450"]
+[ext_resource type="PackedScene" uid="uid://dky4jufyhlb2v" path="res://A Ultima Guarda Real/decoracoes/placa_2.tscn" id="12_s4ve7"]
+[ext_resource type="PackedScene" uid="uid://dm27so0dtd27b" path="res://A Ultima Guarda Real/decoracoes/espantalho.tscn" id="13_lks8i"]
+[ext_resource type="PackedScene" uid="uid://b2cpkmwx7hgep" path="res://A Ultima Guarda Real/Interativo/mina.tscn" id="14_lks8i"]
+[ext_resource type="PackedScene" uid="uid://crjrjsg2x0ha6" path="res://A Ultima Guarda Real/Interativo/arvore_interativa.tscn" id="15_grk60"]
+[ext_resource type="PackedScene" uid="uid://cqekg0qd1tpsa" path="res://A Ultima Guarda Real/Interface/hud.tscn" id="15_p6ltr"]
+[ext_resource type="PackedScene" uid="uid://c38wxixdpv1nk" path="res://A Ultima Guarda Real/barra_vida.tscn" id="18_bk6nj"]
+[ext_resource type="Texture2D" uid="uid://m3acb3w8g2m6" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Disable_3Slides.png" id="19_kvmru"]
+[ext_resource type="Script" uid="uid://ba73fatsj13k1" path="res://A Ultima Guarda Real/Interface/hud.gd" id="19_nscgs"]
+[ext_resource type="Texture2D" uid="uid://bdwrhgmbtvba0" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Disable.png" id="20_054sa"]
+[ext_resource type="Texture2D" uid="uid://bq5ou36ldwqik" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Archer + Bow/Archer_modified_(NoArms).png" id="22_tmk7b"]
+[ext_resource type="Texture2D" uid="uid://bhal0qqatww8x" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Bow_Purple.png" id="23_o7x1j"]
+[ext_resource type="Texture2D" uid="uid://ds7rc8gkx8fyl" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Units/Black Units/Warrior/Sprite-0002.png" id="23_tmk7b"]
+[ext_resource type="PackedScene" uid="uid://dmgknan4ap455" path="res://A Ultima Guarda Real/decoracoes/castelo.tscn" id="24_be3n7"]
+[ext_resource type="Texture2D" uid="uid://bvc67o8r33qw4" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Hover.png" id="24_u5vkf"]
+[ext_resource type="Texture2D" uid="uid://c4rgqeakq368v" path="res://A Ultima Guarda Real/Coletaveis/Resources/G_Idle.png" id="25_o7x1j"]
+[ext_resource type="Texture2D" uid="uid://c3o1fbhe4i5vp" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Red_3Slides_Pressed.png" id="26_baur1"]
+[ext_resource type="Texture2D" uid="uid://baljtnataifr4" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Red.png" id="26_nscgs"]
+[ext_resource type="Texture2D" uid="uid://brg5s83ojyo0w" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Deco/14.png" id="27_46oey"]
+[ext_resource type="Texture2D" uid="uid://dpqxqa3bryl1p" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Deco/15.png" id="28_tw83h"]
+[ext_resource type="Texture2D" uid="uid://bwph4y0iiwe3t" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Blue.png" id="29_dbyoy"]
+[ext_resource type="Texture2D" uid="uid://hg3m0bd581qr" path="res://A Ultima Guarda Real/Coletaveis/Resources/W_Idle.png" id="30_wvtou"]
+[ext_resource type="PackedScene" uid="uid://dg4s6w6scbbdg" path="res://A Ultima Guarda Real/boss_cabuloso.tscn" id="33_46oey"]
+[ext_resource type="Texture2D" uid="uid://bhwsp635nal07" path="res://A Ultima Guarda Real/Interface/game_over.jpg" id="39_3a57d"]
+[ext_resource type="Script" uid="uid://cjhfmiig4pdkg" path="res://A Ultima Guarda Real/area_perigo.gd" id="40_wsubj"]
+[ext_resource type="PackedScene" uid="uid://b8uknahqvi8ah" path="res://A Ultima Guarda Real/Interativo/monge.tscn" id="41_s0k5o"]
+[ext_resource type="PackedScene" uid="uid://c5v1d6pn28m6e" path="res://A Ultima Guarda Real/Menu.tscn" id="43_qfvmc"]
+[ext_resource type="Texture2D" uid="uid://dfal33ga5u8ub" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="43_qwqdm"]
+[ext_resource type="Texture2D" uid="uid://bp6cm67tnb2ok" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/UI/Icons/Regular_10.png" id="44_0y2ie"]
+[ext_resource type="Script" uid="uid://cffb33ga3wui0" path="res://A Ultima Guarda Real/trava_arena_boss.gd" id="45_nahk2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wvtou"]
+radius = 144.08678
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_baur1"]
+radius = 142.0317
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16okt"]
+texture = ExtResource("7_7hq6e")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 20.885529, 32, 22.578957, 32, 32, -32, 32)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-32, -25.965797, -32, -32, 32, -32, 32, -27.094746)
+2:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.094748, -32, -32, -32, -32, -32, -32, 32, -26.530273, 32)
+0:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(32, -32, 26.53027, -32, 27.659222, 32, 32, 32)
+0:3/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -25.965797, 32, -26.530273, 32, -32)
+2:1/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gxyji"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 9
+physics_layer_0/collision_mask = 9
+sources/0 = SubResource("TileSetAtlasSource_16okt")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxyji"]
+size = Vector2(1121, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16okt"]
+size = Vector2(57.5, 1052)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbyoy"]
+size = Vector2(611, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl450"]
+size = Vector2(439, 690)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4ve7"]
+size = Vector2(880, 681)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lks8i"]
+size = Vector2(3895, 181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk3xu"]
+size = Vector2(2878, 1372)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0k5o"]
+size = Vector2(1291, 1930)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be3n7"]
+size = Vector2(2806, 1417)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7l11"]
+atlas = ExtResource("22_tmk7b")
+region = Rect2(0, 0, 192, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_622og"]
+atlas = ExtResource("22_tmk7b")
+region = Rect2(192, 0, 192, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vwv8"]
+atlas = ExtResource("22_tmk7b")
+region = Rect2(384, 0, 192, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv3a1"]
+atlas = ExtResource("22_tmk7b")
+region = Rect2(576, 0, 192, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtvsk"]
+atlas = ExtResource("22_tmk7b")
+region = Rect2(768, 0, 192, 196)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbwgr"]
+atlas = ExtResource("22_tmk7b")
+region = Rect2(960, 0, 192, 196)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5vkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7l11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_622og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vwv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv3a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtvsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbwgr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvtou"]
+atlas = ExtResource("23_o7x1j")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_baur1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvtou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5vkf"]
+atlas = ExtResource("23_tmk7b")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7x1j"]
+atlas = ExtResource("23_tmk7b")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nscgs"]
+atlas = ExtResource("23_tmk7b")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46oey"]
+atlas = ExtResource("23_tmk7b")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw83h"]
+atlas = ExtResource("23_tmk7b")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbyoy"]
+atlas = ExtResource("23_tmk7b")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvtou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5vkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7x1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nscgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46oey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw83h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbyoy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3a57d"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsubj"]
+bg_color = Color(0.12955844, 0.12955847, 0.12955844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0k5o"]
+bg_color = Color(0.48622638, 0.27691048, 0.4867375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be3n7"]
+bg_color = Color(0.5686275, 0.33333334, 0.90588236, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwqdm"]
+bg_color = Color(1, 0, 0.003921569, 0.23137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk3xu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkdya"]
+bg_color = Color(0.41960785, 0.14901961, 0.42352942, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swmc3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfvmc"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nahk2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpp33"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y2ie"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hplav"]
+bg_color = Color(0.6, 0.6, 0.6, 0.60784316)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84qai"]
+bg_color = Color(0.6, 0.6, 0.6, 0.2784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rm6d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlyfb"]
+bg_color = Color(0.6, 0.6, 0.6, 0.60784316)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpaug"]
+bg_color = Color(0.6, 0.6, 0.6, 0.2784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bqsl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x74xl"]
+bg_color = Color(0.30980393, 0.5764706, 0.99607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyuns"]
+bg_color = Color(0.78273565, 0.13310292, 0.18392304, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swmc3"]
+size = Vector2(57, 1073)
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("guerreiro", "arqueiro", "timer_reset", "tela_morte", "texto_morte", "botao_restart", "menu", "botao_iniciar", "botao_sair", "botao_pausa", "botao_despausa", "tela_fim", "decoration", "spawn_timer", "spawn_area")]
+script = ExtResource("1_3fhln")
+guerreiro = NodePath("Decoration/Guerreiro")
+arqueiro = NodePath("Decoration/Arqueiro")
+timer_reset = NodePath("TimerReset")
+tela_morte = NodePath("HUD/Tela_morte")
+texto_morte = NodePath("HUD/Texto_morte")
+botao_restart = NodePath("HUD/Tela_morte/Botao_reinicio")
+menu = NodePath("HUD/Menu")
+botao_iniciar = NodePath("HUD/Menu/Botao_iniciar")
+botao_sair = NodePath("HUD/Menu/Botao_sair")
+botao_pausa = NodePath("HUD/Pause")
+botao_despausa = NodePath("HUD/Pause_painel/Unpause")
+tela_fim = NodePath("HUD/Tela_fim")
+decoration = NodePath("Decoration")
+enemy_scene = ExtResource("4_gxyji")
+spawn_timer = NodePath("Enemy_spawn_timer")
+spawn_area = NodePath("AreaPerigo")
+
+[node name="map" parent="." instance=ExtResource("6_m1qs3")]
+position = Vector2(0, -9)
+
+[node name="Portal" type="TileMapLayer" parent="."]
+
+[node name="AreaPortal_1" type="Area2D" parent="Portal" node_paths=PackedStringArray("jogador", "arqueiro")]
+script = ExtResource("3_dbyoy")
+jogador = NodePath("../../Decoration/Guerreiro")
+arqueiro = NodePath("../../Decoration/Arqueiro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/AreaPortal_1"]
+position = Vector2(776, -3316)
+shape = SubResource("CircleShape2D_wvtou")
+debug_color = Color(0.85011774, 0.00089600205, 0.9010607, 0.41960785)
+
+[node name="AreaPortal_2" type="Area2D" parent="Portal" node_paths=PackedStringArray("jogador", "arqueiro", "tela_fim")]
+script = ExtResource("3_wvtou")
+jogador = NodePath("../../Decoration/Guerreiro")
+arqueiro = NodePath("../../Decoration/Arqueiro")
+tela_fim = NodePath("../../HUD/Tela_fim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/AreaPortal_2"]
+position = Vector2(7089, 3498)
+shape = SubResource("CircleShape2D_baur1")
+
+[node name="Ponte" type="TileMapLayer" parent="."]
+position = Vector2(0, -3)
+tile_map_data = PackedByteArray("AAA1ABIAAAAAAAAAAAA2ABIAAAABAAAAAAA3ABIAAAABAAAAAAA4ABIAAAABAAAAAAA5ABIAAAABAAAAAAA6ABIAAAABAAAAAAA7ABIAAAABAAAAAAA8ABIAAAABAAAAAAA9ABIAAAABAAAAAAA+ABIAAAABAAAAAAA/ABIAAAABAAAAAABAABIAAAABAAAAAABBABIAAAABAAAAAABCABIAAAABAAAAAABDABIAAAABAAAAAABEABIAAAABAAAAAABFABIAAAABAAAAAABGABIAAAABAAAAAABHABIAAAACAAAAAAAoABgAAAAAAAEAAAAoABkAAAAAAAIAAAAoABoAAAAAAAIAAAAoABsAAAAAAAIAAAAoABwAAAAAAAIAAAAoAB0AAAAAAAIAAAAoAB4AAAAAAAIAAAAoAB8AAAAAAAIAAAAoACAAAAAAAAIAAAAoACEAAAAAAAIAAAAoACIAAAAAAAIAAAAoACMAAAAAAAIAAAAoACQAAAAAAAIAAAAoACUAAAAAAAIAAAAoACYAAAAAAAIAAAAoACcAAAAAAAIAAAAwAAYAAAAAAAMAAAAwAAUAAAAAAAIAAAAwAAQAAAAAAAIAAAAwAAMAAAAAAAIAAAAwAAIAAAAAAAIAAAAwAAEAAAAAAAIAAAAwAAAAAAAAAAIAAAAwAP//AAAAAAIAAAAwAP7/AAAAAAIAAAAwAP3/AAAAAAIAAAAwAPz/AAAAAAIAAAAwAPv/AAAAAAIAAAAwAPr/AAAAAAIAAAAwAPn/AAAAAAIAAAAwAPj/AAAAAAIAAAAwAPf/AAAAAAIAAAAwAPb/AAAAAAEAAAAoACgAAAAAAAIAAAAoACkAAAABAAIAAABhADcAAAAAAAAAAABiADcAAAABAAAAAABjADcAAAABAAAAAABkADcAAAABAAAAAABlADcAAAABAAAAAABmADcAAAABAAAAAABnADcAAAABAAAAAABoADcAAAABAAAAAABpADcAAAABAAAAAABqADcAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_gxyji")
+
+[node name="Area_Ponte" type="Area2D" parent="Ponte"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("3_16okt")
+
+[node name="Colisao_p1" type="CollisionShape2D" parent="Ponte/Area_Ponte"]
+position = Vector2(4000.5, 1182)
+shape = SubResource("RectangleShape2D_gxyji")
+
+[node name="Colisao_p2" type="CollisionShape2D" parent="Ponte/Area_Ponte"]
+position = Vector2(2592.25, 2097)
+shape = SubResource("RectangleShape2D_16okt")
+
+[node name="Colisao_p3" type="CollisionShape2D" parent="Ponte/Area_Ponte"]
+position = Vector2(3104, -102)
+shape = SubResource("RectangleShape2D_16okt")
+
+[node name="Colisao_p4" type="CollisionShape2D" parent="Ponte/Area_Ponte"]
+position = Vector2(6530.5, 3548)
+shape = SubResource("RectangleShape2D_dbyoy")
+
+[node name="Caverna" type="TileMapLayer" parent="."]
+
+[node name="percurso_caverna" type="Area2D" parent="Caverna"]
+collision_layer = 24
+collision_mask = 24
+script = ExtResource("4_r8flx")
+
+[node name="area1" type="CollisionShape2D" parent="Caverna/percurso_caverna"]
+position = Vector2(5915.5, -2918)
+shape = SubResource("RectangleShape2D_dl450")
+debug_color = Color(0.76270723, 0.58994955, 0.13214377, 0.41960785)
+
+[node name="area2" type="CollisionShape2D" parent="Caverna/percurso_caverna"]
+position = Vector2(5385, -2921.5)
+shape = SubResource("RectangleShape2D_s4ve7")
+debug_color = Color(0.69661593, 0.4880094, 0.22765443, 0.41960785)
+
+[node name="area3" type="CollisionShape2D" parent="Caverna/percurso_caverna"]
+position = Vector2(3090.5, -2989.5)
+shape = SubResource("RectangleShape2D_lks8i")
+debug_color = Color(0.64505064, 0.5162255, 0.23436782, 0.41960785)
+
+[node name="AreaBOSS" type="Area2D" parent="." node_paths=PackedStringArray("player", "boss", "game", "tela_morte", "texto_morte", "botao_restart_luta")]
+visible = false
+script = ExtResource("9_swmc3")
+player = NodePath("../Decoration/Guerreiro")
+boss = NodePath("../Decoration/BossCabuloso")
+game = NodePath("..")
+tela_morte = NodePath("../HUD/Tela_morte")
+texto_morte = NodePath("../HUD/Texto_morte")
+botao_restart_luta = NodePath("../HUD/Tela_morte/Botao_reinicio_boss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBOSS"]
+position = Vector2(4843, 3468)
+shape = SubResource("RectangleShape2D_gk3xu")
+
+[node name="AreaPerigo" type="Area2D" parent="."]
+visible = false
+script = ExtResource("40_wsubj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPerigo"]
+position = Vector2(1629.5, -1128)
+shape = SubResource("RectangleShape2D_s0k5o")
+debug_color = Color(1, 0.018882535, 0.0042407042, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaPerigo"]
+position = Vector2(3669, -1327.5)
+shape = SubResource("RectangleShape2D_be3n7")
+debug_color = Color(0.9939429, 0, 0.23695627, 0.41960785)
+
+[node name="Decoration" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Guerreiro" parent="Decoration" instance=ExtResource("4_16okt")]
+position = Vector2(1838, 687)
+
+[node name="Arqueiro" parent="Decoration" instance=ExtResource("4_1abhl")]
+position = Vector2(2225, 1052)
+
+[node name="Mina" parent="Decoration" instance=ExtResource("14_lks8i")]
+position = Vector2(5409, 899)
+
+[node name="portal" parent="Decoration" instance=ExtResource("10_wvtou")]
+position = Vector2(778.49994, -3320.5)
+scale = Vector2(8.609375, 7.0781264)
+
+[node name="portal2" parent="Decoration" instance=ExtResource("10_wvtou")]
+position = Vector2(7086.9995, 3490)
+scale = Vector2(8.609375, 7.0781264)
+
+[node name="Tocha" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(1228, -2260)
+collision_mask = 1
+
+[node name="Tocha2" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(1588, -2282)
+collision_mask = 1
+
+[node name="Tocha3" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(1139, -444)
+collision_mask = 1
+
+[node name="Tocha4" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(4139, -1674)
+collision_mask = 1
+
+[node name="Tocha5" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(4619, -2469)
+collision_mask = 1
+
+[node name="Tocha6" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(6152, -1917)
+collision_mask = 1
+
+[node name="Tocha7" parent="Decoration" instance=ExtResource("4_gxyji")]
+position = Vector2(4513, -3284)
+collision_mask = 1
+
+[node name="ovelha" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(2935, -718)
+
+[node name="ovelha2" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(3126, 1378)
+
+[node name="ovelha3" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(963, -546)
+
+[node name="ovelha4" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(2435, 894)
+
+[node name="ovelha5" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(2357, -1856)
+
+[node name="ovelha6" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(4356, -1997)
+
+[node name="ovelha7" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(4675, -2792)
+
+[node name="arbusto" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2200, 1120)
+
+[node name="arbusto2" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(1886, 1690)
+
+[node name="arbusto3" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2539, 1388)
+
+[node name="arbusto4" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(3214, 1169)
+
+[node name="arbusto5" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2961, 759)
+
+[node name="arbusto6" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(4798, -1825)
+
+[node name="arbusto7" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(1468, -1810)
+
+[node name="arbusto8" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(1927, -1839)
+
+[node name="arbusto9" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2551, -1139)
+
+[node name="arbusto10" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2024, -1400)
+
+[node name="arbusto11" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2565, 546)
+
+[node name="arbusto12" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(4275, -1130)
+
+[node name="arbusto13" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(2176, -750)
+
+[node name="arbusto14" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(3182, -1142)
+
+[node name="cogumelo" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3320, 1320)
+
+[node name="cogumelo2" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(2984, 1328)
+
+[node name="cogumelo3" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3128, 968)
+
+[node name="cogumelo4" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(2238, -1188)
+
+[node name="cogumelo5" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(1179, -766)
+
+[node name="cogumelo6" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3992, -1107)
+
+[node name="cogumelo7" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(2298, -1706)
+
+[node name="cogumelo8" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4724, -1469)
+
+[node name="cogumelo9" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4954, -1107)
+
+[node name="cogumelo10" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(5235, -2010)
+
+[node name="Cogumelo11" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(5714, 1017)
+
+[node name="Cogumelo12" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(5416, 772)
+
+[node name="Cogumelo13" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(1659, 1561)
+
+[node name="Arvore_2_5" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5286, -1685)
+
+[node name="Arvore_2_6" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5373, -1687)
+
+[node name="Arvore_2_7" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5456, -1688)
+
+[node name="Arvore_2_8" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5628, -1688)
+
+[node name="Arvore_2_9" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5715, -1685)
+
+[node name="Arvore_2_10" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5793, -1683)
+
+[node name="Arvore_2_11" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5880, -1685)
+
+[node name="Arvore_2_12" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5969, -1683)
+
+[node name="Arvore_2_13" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6065, -1685)
+
+[node name="Arvore_2_14" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6165, -1692)
+
+[node name="Arvore_2_15" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6268, -1687)
+
+[node name="Arvore_2_16" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(6346, -1689)
+
+[node name="Arvore_2_22" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(969, -102)
+
+[node name="Arvore_2_23" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1049, -104)
+
+[node name="Arvore_2_24" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(886, -101)
+
+[node name="Arvore_2_25" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1737, -98)
+
+[node name="Arvore_2_26" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1136, -100)
+
+[node name="Arvore_2_27" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1220, -100)
+
+[node name="Arvore_2_28" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1385, -100)
+
+[node name="Arvore_2_29" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1561, -100)
+
+[node name="Arvore_2_30" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1472, -100)
+
+[node name="Arvore_2_31" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1304, -101)
+
+[node name="Arvore_2_32" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1913, -101)
+
+[node name="Arvore_2_33" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2087, -106)
+
+[node name="Arvore_2_34" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2002, -107)
+
+[node name="Arvore_2_35" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1649, -102)
+
+[node name="Arvore_2_36" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(1824, -101)
+
+[node name="Arvore_2_37" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2171, -98)
+
+[node name="Arvore_2_38" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2242, -270)
+
+[node name="Arvore_2_40" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2240, -453)
+
+[node name="Arvore_2_41" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2239, -365)
+
+[node name="Arvore_2_42" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2244, -186)
+
+[node name="Arvore_2_43" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(2253, -100)
+
+[node name="Arvore_2_44" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5545, -1686)
+
+[node name="Arvore_1_2" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(4604, 1671)
+
+[node name="Arvore_1_3" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(4976, 1554)
+
+[node name="Arvore_1_4" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(2574, 1124)
+
+[node name="Arvore_1_5" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(3037, 1023)
+
+[node name="Arvore_1_6" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(1925, 1070)
+
+[node name="Arvore_1_7" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5226, 862)
+
+[node name="Arvore_1_8" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5589, 813)
+
+[node name="Arvore_1_9" parent="Decoration" instance=ExtResource("12_dl450")]
+position = Vector2(5761, 903)
+
+[node name="Arvore_1_10" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(3373, 1583)
+
+[node name="Arvore_1_12" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(1521, -1468)
+
+[node name="Arvore_1_13" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(3522, -1685)
+
+[node name="Arvore_1_14" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(2003, -1609)
+
+[node name="Arvore_1_15" parent="Decoration" instance=ExtResource("11_0x63a")]
+position = Vector2(1510, -1009)
+
+[node name="Placa_1" parent="Decoration" instance=ExtResource("11_s4ve7")]
+position = Vector2(2756, 1420)
+
+[node name="Placa_2" parent="Decoration" instance=ExtResource("12_s4ve7")]
+position = Vector2(3433, -896)
+
+[node name="Placa_3" parent="Decoration" instance=ExtResource("11_s4ve7")]
+position = Vector2(5616, -2341)
+
+[node name="Placa_4" parent="Decoration" instance=ExtResource("12_s4ve7")]
+position = Vector2(4570, -2229)
+
+[node name="Placa_5" parent="Decoration" instance=ExtResource("11_s4ve7")]
+position = Vector2(5640, 963)
+
+[node name="Placa_6" parent="Decoration" instance=ExtResource("12_s4ve7")]
+position = Vector2(2127, 1535)
+
+[node name="Placa_7" parent="Decoration" instance=ExtResource("11_s4ve7")]
+position = Vector2(4388, -1324)
+
+[node name="Placa_8" parent="Decoration" instance=ExtResource("11_s4ve7")]
+position = Vector2(4069, -773)
+
+[node name="Placa_9" parent="Decoration" instance=ExtResource("12_s4ve7")]
+position = Vector2(4616, 1527)
+
+[node name="Placa_10" parent="Decoration" instance=ExtResource("12_s4ve7")]
+position = Vector2(2970, -1688)
+
+[node name="Espantalho" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(3349, 686)
+
+[node name="Espantalho2" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(3076, 1541)
+
+[node name="Espantalho3" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(3751, -1755)
+
+[node name="Espantalho4" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(5171, 978)
+
+[node name="Espantalho5" parent="Decoration" instance=ExtResource("13_lks8i")]
+position = Vector2(3416, -1458)
+
+[node name="Arvore_interativa" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(3176, -869)
+
+[node name="Arvore_interativa2" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(2799, -906)
+
+[node name="Arvore_interativa3" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(2829, 610)
+
+[node name="Arvore_interativa4" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(3113, 689)
+
+[node name="Arvore_interativa5" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(2854, -1253)
+
+[node name="Arvore_interativa6" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(2370, -1391)
+
+[node name="Arvore_interativa7" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(1860, -1028)
+
+[node name="Arvore_interativa8" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(2545, -1842)
+
+[node name="Arvore_interativa9" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(3840, -1400)
+
+[node name="Arvore_interativa10" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(3773, -802)
+
+[node name="Arvore_interativa11" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(4500, -861)
+
+[node name="Arvore_interativa12" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(4654, -1232)
+
+[node name="Arvore_interativa13" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(4462, -1688)
+
+[node name="Arvore_interativa14" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(4943, -1546)
+
+[node name="Arvore_interativa15" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(1064, -975)
+
+[node name="Arvore_interativa16" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(4657, -2578)
+
+[node name="Arvore_interativa17" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(6003, -1966)
+
+[node name="Arvore_interativa18" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(680, -3005)
+
+[node name="Arvore_interativa19" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(764, -3001)
+
+[node name="Arvore_interativa20" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(842, -3002)
+
+[node name="Arvore_interativa21" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(2898, -1903)
+
+[node name="Arvore_interativa22" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(3127, -1734)
+
+[node name="Arvore_interativa23" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(2782, -1721)
+
+[node name="Arvore_interativa24" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(1129, -1813)
+
+[node name="Arvore_interativa25" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(1313, -1657)
+
+[node name="Arvore_interativa26" parent="Decoration" instance=ExtResource("15_grk60")]
+position = Vector2(1137, -1515)
+
+[node name="BossCabuloso" parent="Decoration" node_paths=PackedStringArray("barra_vida", "capa_barra_vida", "nome_barra_vida") instance=ExtResource("33_46oey")]
+position = Vector2(5847, 3308)
+barra_vida = NodePath("../../HUD/BarraVidaBOSS")
+capa_barra_vida = NodePath("../../HUD/Faixa_BOSS")
+nome_barra_vida = NodePath("../../HUD/NomeBOSS")
+
+[node name="ovelha8" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(4435, 2886)
+
+[node name="ovelha9" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(4724, 3944)
+
+[node name="ovelha10" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(3576, 3956)
+
+[node name="ovelha11" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(3626, 2999)
+
+[node name="ovelha12" parent="Decoration" instance=ExtResource("6_wnwed")]
+position = Vector2(2991, -1818)
+
+[node name="Cogumelo" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4609, 3431)
+
+[node name="Cogumelo2" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3528, 3874)
+
+[node name="Cogumelo3" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4102, 2904)
+
+[node name="Cogumelo4" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3534, 3224)
+
+[node name="Cogumelo5" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4809, 3514)
+
+[node name="Cogumelo6" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(5453, 2952)
+
+[node name="Cogumelo7" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4907, 2877)
+
+[node name="Cogumelo8" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(5675, 3958)
+
+[node name="Cogumelo9" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4813, 3308)
+
+[node name="Cogumelo10" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(3873, 4022)
+
+[node name="Cogumelo14" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4977, 683)
+
+[node name="Cogumelo15" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(4820, 987)
+
+[node name="Cogumelo16" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(5716, 1213)
+
+[node name="Cogumelo17" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(5572, 1607)
+
+[node name="Cogumelo18" parent="Decoration" instance=ExtResource("9_gxyji")]
+position = Vector2(6015, 1461)
+
+[node name="Monge" parent="Decoration" node_paths=PackedStringArray("guerreiro", "arqueiro") instance=ExtResource("41_s0k5o")]
+position = Vector2(4946, 1586)
+guerreiro = NodePath("../Guerreiro")
+arqueiro = NodePath("../Arqueiro")
+
+[node name="castelo" parent="Decoration" instance=ExtResource("24_be3n7")]
+position = Vector2(1927, 510)
+
+[node name="arbustos" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(4768, 1643)
+
+[node name="arbustos2" parent="Decoration" instance=ExtResource("11_dl450")]
+position = Vector2(3222, -1439)
+
+[node name="HUD" parent="." node_paths=PackedStringArray("HUD_ouro", "HUD_madeira", "HUD_kills", "guerreiro", "arqueiro", "game") instance=ExtResource("15_p6ltr")]
+script = ExtResource("19_nscgs")
+HUD_ouro = NodePath("HUD_ouro")
+HUD_madeira = NodePath("HUD_madeira")
+HUD_kills = NodePath("HUD_kills")
+guerreiro = NodePath("../Decoration/Guerreiro")
+arqueiro = NodePath("../Decoration/Arqueiro")
+game = NodePath("..")
+
+[node name="Faixa_personagem_G" type="TextureRect" parent="HUD"]
+offset_left = 104.0
+offset_top = 48.0
+offset_right = 351.0
+offset_bottom = 112.0
+texture = ExtResource("19_kvmru")
+
+[node name="Bloco_personagem_G" type="TextureRect" parent="HUD"]
+offset_left = 48.0
+offset_top = 28.0
+offset_right = 141.0
+offset_bottom = 116.0
+texture = ExtResource("20_054sa")
+
+[node name="BarraVida" parent="HUD" node_paths=PackedStringArray("alvo") instance=ExtResource("18_bk6nj")]
+offset_left = 132.0
+offset_top = 65.0
+offset_right = 329.0
+offset_bottom = 91.0
+alvo = NodePath("../../Decoration/Guerreiro")
+
+[node name="Faixa_personagem_A" type="TextureRect" parent="HUD"]
+offset_left = 106.0
+offset_top = 118.0
+offset_right = 353.0
+offset_bottom = 182.0
+texture = ExtResource("19_kvmru")
+
+[node name="Bloco_personagem_A" type="TextureRect" parent="HUD"]
+offset_left = 48.0
+offset_top = 103.0
+offset_right = 141.0
+offset_bottom = 191.0
+texture = ExtResource("20_054sa")
+
+[node name="BarraVida2" parent="HUD" node_paths=PackedStringArray("alvo") instance=ExtResource("18_bk6nj")]
+offset_left = 134.0
+offset_top = 132.0
+offset_right = 332.0
+offset_bottom = 159.0
+alvo = NodePath("../../Decoration/Arqueiro")
+
+[node name="Faixa_BOSS" type="TextureRect" parent="HUD"]
+visible = false
+offset_left = -15.0
+offset_top = 568.0
+offset_right = 1152.0
+offset_bottom = 632.0
+texture = ExtResource("26_baur1")
+
+[node name="NomeBOSS" type="Label" parent="HUD"]
+visible = false
+offset_left = 444.0
+offset_top = 550.0
+offset_right = 689.0
+offset_bottom = 573.0
+text = "A BESTA BANIDA DO LABIRINTO"
+
+[node name="BarraVidaBOSS" parent="HUD" node_paths=PackedStringArray("alvo") instance=ExtResource("18_bk6nj")]
+visible = false
+offset_left = 86.0
+offset_top = 587.0
+offset_right = 1051.0
+offset_bottom = 604.0
+max_value = 1000.0
+alvo = NodePath("../../Decoration/BossCabuloso")
+
+[node name="arqueiro_logo" type="AnimatedSprite2D" parent="HUD"]
+position = Vector2(96, 139)
+scale = Vector2(0.671875, 0.67346936)
+sprite_frames = SubResource("SpriteFrames_u5vkf")
+autoplay = "default"
+frame_progress = 0.39521354
+
+[node name="arqueiro_logo2" type="AnimatedSprite2D" parent="HUD"]
+position = Vector2(96, 139)
+scale = Vector2(0.671875, 0.67346936)
+sprite_frames = SubResource("SpriteFrames_baur1")
+autoplay = "default"
+
+[node name="guerreiro_logo" type="AnimatedSprite2D" parent="HUD"]
+position = Vector2(95, 61)
+scale = Vector2(0.71875, 0.6822917)
+sprite_frames = SubResource("SpriteFrames_wvtou")
+autoplay = "default"
+frame_progress = 0.030319704
+
+[node name="Bloco_item_O" type="TextureRect" parent="HUD"]
+offset_left = 60.0
+offset_top = 202.0
+offset_right = 92.0
+offset_bottom = 237.0
+texture = ExtResource("24_u5vkf")
+expand_mode = 1
+
+[node name="Ouro" type="TextureRect" parent="HUD"]
+offset_left = 46.0
+offset_top = 172.0
+offset_right = 103.0
+offset_bottom = 238.0
+texture = ExtResource("25_o7x1j")
+expand_mode = 1
+
+[node name="Bloco_item_K" type="TextureRect" parent="HUD"]
+offset_left = 158.0
+offset_top = 202.0
+offset_right = 190.0
+offset_bottom = 237.0
+texture = ExtResource("26_nscgs")
+expand_mode = 1
+
+[node name="Kill" type="TextureRect" parent="HUD"]
+offset_left = 159.0
+offset_top = 200.0
+offset_right = 191.0
+offset_bottom = 235.0
+texture = ExtResource("27_46oey")
+expand_mode = 1
+
+[node name="Kill2" type="TextureRect" parent="HUD"]
+offset_left = 157.0
+offset_top = 191.0
+offset_right = 189.0
+offset_bottom = 226.0
+texture = ExtResource("28_tw83h")
+expand_mode = 1
+
+[node name="Bloco_item_M" type="TextureRect" parent="HUD"]
+offset_left = 261.0
+offset_top = 203.0
+offset_right = 293.0
+offset_bottom = 238.0
+texture = ExtResource("29_dbyoy")
+expand_mode = 1
+
+[node name="Madeira" type="TextureRect" parent="HUD"]
+offset_left = 248.0
+offset_top = 172.0
+offset_right = 305.0
+offset_bottom = 238.0
+texture = ExtResource("30_wvtou")
+expand_mode = 1
+
+[node name="HUD_ouro" type="Label" parent="HUD"]
+offset_left = 98.0
+offset_top = 206.0
+offset_right = 152.0
+offset_bottom = 236.0
+text = "0"
+
+[node name="HUD_kills" type="Label" parent="HUD"]
+offset_left = 197.0
+offset_top = 205.0
+offset_right = 251.0
+offset_bottom = 235.0
+text = "0"
+
+[node name="HUD_madeira" type="Label" parent="HUD"]
+offset_left = 297.0
+offset_top = 205.0
+offset_right = 351.0
+offset_bottom = 235.0
+text = "0"
+
+[node name="Bloco_item_O2" type="TextureRect" parent="HUD"]
+offset_left = 1043.0
+offset_top = 10.0
+offset_right = 1128.0
+offset_bottom = 93.0
+texture = ExtResource("43_qwqdm")
+expand_mode = 1
+
+[node name="Bloco_item_O3" type="TextureRect" parent="HUD"]
+offset_left = 1058.0
+offset_top = 32.0
+offset_right = 1114.0
+offset_bottom = 85.0
+texture = ExtResource("44_0y2ie")
+expand_mode = 1
+
+[node name="Tela_morte" type="Panel" parent="HUD"]
+visible = false
+offset_right = 1151.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3a57d")
+
+[node name="Botao_reinicio" type="Button" parent="HUD/Tela_morte"]
+visible = false
+layout_mode = 0
+offset_left = 434.0
+offset_top = 437.0
+offset_right = 700.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_wsubj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s0k5o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_be3n7")
+text = "Tentar novamente"
+
+[node name="Botao_reinicio_boss" type="Button" parent="HUD/Tela_morte"]
+visible = false
+layout_mode = 0
+offset_left = 437.0
+offset_top = 438.0
+offset_right = 700.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_qwqdm")
+text = "Tentar novamente"
+
+[node name="Texto_morte" type="Sprite2D" parent="HUD"]
+visible = false
+position = Vector2(564, 247)
+texture = ExtResource("39_3a57d")
+
+[node name="Menu" parent="HUD" instance=ExtResource("43_qfvmc")]
+visible = false
+
+[node name="Botao_iniciar" type="Button" parent="HUD/Menu"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 503.0
+offset_top = 320.0
+offset_right = 667.0
+offset_bottom = 407.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.9490196, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_gk3xu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wkdya")
+theme_override_styles/hover = SubResource("StyleBoxFlat_swmc3")
+text = "Jogar"
+
+[node name="Botao_sair" type="Button" parent="HUD/Menu"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 505.0
+offset_top = 441.0
+offset_right = 652.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0.14901961, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0.22352941, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfvmc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nahk2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpp33")
+text = "Sair"
+
+[node name="Pause" type="Button" parent="HUD"]
+visible = false
+offset_left = 1064.0
+offset_top = 32.0
+offset_right = 1107.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0y2ie")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hplav")
+theme_override_styles/hover = SubResource("StyleBoxFlat_84qai")
+
+[node name="Pause_painel" type="Control" parent="HUD"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Unpause" type="Button" parent="HUD/Pause_painel"]
+visible = false
+layout_mode = 0
+offset_left = 1062.0
+offset_top = 32.0
+offset_right = 1107.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1rm6d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dlyfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpaug")
+
+[node name="Tela_fim" type="Panel" parent="HUD"]
+visible = false
+offset_right = 1151.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2bqsl")
+
+[node name="Label" type="Label" parent="HUD/Tela_fim"]
+layout_mode = 0
+offset_left = -232.0
+offset_top = 104.0
+offset_right = 1655.0
+offset_bottom = 572.0
+theme_override_font_sizes/font_size = 24
+text = "                                                                                                     Parabéns, você concluiu o jogo
+
+
+
+                                            Esse é um projeto simples mas feito com muito carinho, obrigado por jogar meu primeiro jogo.
+
+                                                                                          
+
+                                             Acredite, isso é só o começo!
+
+                                                                                                                                                                                                                               
+
+                                                                                                                                                                                                                       -Pet"
+
+[node name="arqueiro_logo" type="AnimatedSprite2D" parent="HUD/Tela_fim"]
+position = Vector2(865, 162.00002)
+scale = Vector2(1.1171876, 0.98469377)
+sprite_frames = SubResource("SpriteFrames_u5vkf")
+autoplay = "default"
+frame_progress = 0.21544313
+
+[node name="arqueiro_logo2" type="AnimatedSprite2D" parent="HUD/Tela_fim"]
+position = Vector2(869, 159)
+scale = Vector2(0.9973956, 0.9721514)
+sprite_frames = SubResource("SpriteFrames_baur1")
+autoplay = "default"
+frame_progress = 0.7604865
+
+[node name="guerreiro_logo" type="AnimatedSprite2D" parent="HUD/Tela_fim"]
+position = Vector2(248, 144)
+scale = Vector2(1.1093749, 1.0078126)
+sprite_frames = SubResource("SpriteFrames_wvtou")
+autoplay = "default"
+frame_progress = 0.3773439
+
+[node name="voltar" type="Button" parent="HUD/Tela_fim"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 538.0
+offset_right = 211.0
+offset_bottom = 615.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_x74xl")
+text = "Voltar pra ilha"
+
+[node name="sair" type="Button" parent="HUD/Tela_fim"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 538.0
+offset_right = 418.0
+offset_bottom = 615.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_uyuns")
+text = "Sair"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.6296744, 0.6296749, 0.62967455, 1)
+
+[node name="TimerReset" type="Timer" parent="."]
+wait_time = 6.0
+
+[node name="Enemy_spawn_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Trava_Arena_BOSS" type="StaticBody2D" parent="." node_paths=PackedStringArray("chefe", "colisao")]
+script = ExtResource("45_nahk2")
+chefe = NodePath("../Decoration/BossCabuloso")
+colisao = NodePath("colisao_arena")
+
+[node name="colisao_arena" type="CollisionShape2D" parent="Trava_Arena_BOSS"]
+position = Vector2(6244.5, 3469.5)
+shape = SubResource("RectangleShape2D_swmc3")
+
+[connection signal="body_entered" from="Portal/AreaPortal_1" to="Portal/AreaPortal_1" method="_on_body_entered"]
+[connection signal="body_entered" from="Portal/AreaPortal_2" to="Portal/AreaPortal_2" method="_on_body_entered"]
+[connection signal="body_entered" from="Ponte/Area_Ponte" to="Ponte/Area_Ponte" method="_on_body_entered"]
+[connection signal="body_exited" from="Ponte/Area_Ponte" to="Ponte/Area_Ponte" method="_on_body_exited"]
+[connection signal="body_entered" from="Caverna/percurso_caverna" to="Caverna/percurso_caverna" method="_on_body_entered"]
+[connection signal="body_exited" from="Caverna/percurso_caverna" to="Caverna/percurso_caverna" method="_on_body_exited"]
+[connection signal="body_entered" from="AreaBOSS" to="AreaBOSS" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaBOSS" to="AreaBOSS" method="_on_body_exited"]
+[connection signal="body_entered" from="AreaPerigo" to="AreaPerigo" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaPerigo" to="AreaPerigo" method="_on_body_exited"]
+[connection signal="pressed" from="HUD/Tela_morte/Botao_reinicio" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HUD/Tela_morte/Botao_reinicio_boss" to="AreaBOSS" method="_on_botao_reinicio_boss_pressed"]
+[connection signal="pressed" from="HUD/Menu/Botao_sair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="HUD/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="HUD/Pause_painel/Unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="HUD/Tela_fim/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="HUD/Tela_fim/sair" to="." method="_on_sair_pressed"]
+[connection signal="timeout" from="TimerReset" to="." method="_on_timer_reset_timeout"]
+[connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]

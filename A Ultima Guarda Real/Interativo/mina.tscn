@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2cpkmwx7hgep"]
+
+[ext_resource type="Texture2D" uid="uid://cfgrdg65pkpd6" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Resources/Gold Mine/GoldMine_Destroyed.png" id="1_fqgmd"]
+[ext_resource type="Script" uid="uid://btq875hwco84" path="res://A Ultima Guarda Real/Interativo/mina.gd" id="1_ni22b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni22b"]
+size = Vector2(153, 49.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqgmd"]
+radius = 91.983696
+
+[node name="Mina" type="StaticBody2D" node_paths=PackedStringArray("sprite", "tempo_producao")]
+y_sort_enabled = true
+script = ExtResource("1_ni22b")
+sprite = NodePath("Textura")
+tempo_producao = NodePath("TimerProducao")
+
+[node name="Textura" type="Sprite2D" parent="."]
+texture = ExtResource("1_fqgmd")
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 13.25)
+shape = SubResource("RectangleShape2D_ni22b")
+
+[node name="Area_mina" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_mina"]
+visible = false
+shape = SubResource("CircleShape2D_fqgmd")
+
+[node name="TimerProducao" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerSpawn" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="Area_mina" to="." method="_on_area_mina_body_entered"]
+[connection signal="body_exited" from="Area_mina" to="." method="_on_area_mina_body_exited"]
+[connection signal="timeout" from="TimerProducao" to="." method="_on_timer_producao_timeout"]
+[connection signal="timeout" from="TimerSpawn" to="." method="_on_timer_spawn_timeout"]

@@ -1,0 +1,163 @@
+[gd_scene load_steps=14 format=3 uid="uid://ck4pgmwmsrdcw"]
+
+[ext_resource type="PackedScene" uid="uid://cqhg4cutknyrv" path="res://A Ultima Guarda Real/decoracoes/decoracao.tscn" id="1_gcqev"]
+[ext_resource type="Texture2D" uid="uid://dh0gbmaiaqk3d" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Bushes/Bushe1.png" id="2_1a56x"]
+[ext_resource type="Texture2D" uid="uid://bp7rx47q35tc3" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Bushes/Bushe2.png" id="3_w5b2w"]
+[ext_resource type="Texture2D" uid="uid://ykd2o6biyhwo" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Bushes/Bushe4.png" id="4_11pmi"]
+
+[sub_resource type="Animation" id="Animation_ifra1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rh67g"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_go4oe"]
+_data = {
+&"RESET": SubResource("Animation_ifra1"),
+&"idle": SubResource("Animation_rh67g")
+}
+
+[sub_resource type="Animation" id="Animation_oo5sm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_drq6u"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83u21"]
+_data = {
+&"RESET": SubResource("Animation_oo5sm"),
+&"idle": SubResource("Animation_drq6u")
+}
+
+[sub_resource type="Animation" id="Animation_vvu3q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_f0y2h"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bn2aa"]
+_data = {
+&"RESET": SubResource("Animation_vvu3q"),
+&"idle": SubResource("Animation_f0y2h")
+}
+
+[node name="arbustos" instance=ExtResource("1_gcqev")]
+lista_texturas = Array[String](["res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Bushes/Bushe2.png", "res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Bushes/Bushe1.png", "res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Bushes/Bushe4.png"])
+
+[node name="Textura1" parent="." index="0"]
+position = Vector2(-88.000015, -103.00001)
+scale = Vector2(1.421875, 1.5156251)
+texture = ExtResource("2_1a56x")
+hframes = 8
+
+[node name="anim" type="AnimationPlayer" parent="Textura1" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_go4oe")
+}
+autoplay = "idle"
+
+[node name="Textura2" parent="." index="1"]
+position = Vector2(-26.000011, -76.00001)
+scale = Vector2(1.390625, 1.296875)
+texture = ExtResource("3_w5b2w")
+hframes = 8
+
+[node name="anim2" type="AnimationPlayer" parent="Textura2" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_83u21")
+}
+autoplay = "idle"
+
+[node name="Textura3" parent="." index="2"]
+position = Vector2(-141, -79.00001)
+scale = Vector2(1.375, 1.296875)
+texture = ExtResource("4_11pmi")
+hframes = 8
+
+[node name="anim3" type="AnimationPlayer" parent="Textura3" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_bn2aa")
+}
+autoplay = "idle"
+
+[node name="Colisao" parent="Colisao_fisica" index="0"]
+position = Vector2(2, 24)
+disabled = true

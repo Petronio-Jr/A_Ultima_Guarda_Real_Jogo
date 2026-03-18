@@ -1,0 +1,175 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0cllc6d0tgy7"]
+
+[ext_resource type="Script" uid="uid://dcnp63qihxm64" path="res://A Ultima Guarda Real/Interativo/ovelha.gd" id="1_8xdf7"]
+[ext_resource type="Texture2D" uid="uid://10d8v7h2u255" path="res://A Ultima Guarda Real/Sprites/Tiny Swords (Free Pack)/Tiny Swords (Free Pack)/Decorations/Sheep/Sprite-0001.png" id="1_am664"]
+[ext_resource type="PackedScene" uid="uid://8av7o4fxhrtv" path="res://A Ultima Guarda Real/efeitos/poeira.tscn" id="3_dkkqu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_am664"]
+height = 40.0
+
+[sub_resource type="Animation" id="Animation_dkkqu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textura:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, -22)]
+}
+
+[sub_resource type="Animation" id="Animation_5mb8k"]
+resource_name = "andando"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textura:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -22)]
+}
+
+[sub_resource type="Animation" id="Animation_topya"]
+resource_name = "andando"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.50000006, 0.6, 0.70000005, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12, 13, 17, 18, 19, 20]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textura:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -27)]
+}
+
+[sub_resource type="Animation" id="Animation_8xdf7"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textura:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, -21)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqf5f"]
+_data = {
+&"RESET": SubResource("Animation_dkkqu"),
+&"andando": SubResource("Animation_5mb8k"),
+&"comendo ": SubResource("Animation_topya"),
+&"idle": SubResource("Animation_8xdf7")
+}
+
+[node name="ovelha" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "anim", "tempo_andando", "tempo_fugindo", "poeira")]
+collision_layer = 9
+collision_mask = 29
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_8xdf7")
+sprite = NodePath("Textura")
+anim = NodePath("Animacao")
+tempo_andando = NodePath("Timer_andando")
+tempo_fugindo = NodePath("Timer_fugindo")
+poeira = NodePath("poeira")
+
+[node name="Textura" type="Sprite2D" parent="."]
+position = Vector2(6, -22)
+texture = ExtResource("1_am664")
+hframes = 9
+vframes = 13
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2(6, -11)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_am664")
+
+[node name="Animacao" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tqf5f")
+}
+autoplay = "idle"
+
+[node name="Timer_andando" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer_fugindo" type="Timer" parent="."]
+one_shot = true
+
+[node name="poeira" parent="." instance=ExtResource("3_dkkqu")]
+emitting = true
+amount = 8
+
+[connection signal="timeout" from="Timer_andando" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer_fugindo" to="." method="_on_timer_fugindo_timeout"]

@@ -1,0 +1,258 @@
+[gd_scene load_steps=20 format=3 uid="uid://dyrw6s1jomjke"]
+
+[ext_resource type="Script" uid="uid://rvuttpfaj81s" path="res://A Ultima Guarda Real/Personagens/arqueiro/arqueiro.gd" id="1_gu6dc"]
+[ext_resource type="Texture2D" uid="uid://bq5ou36ldwqik" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Archer + Bow/Archer_modified_(NoArms).png" id="2_31vks"]
+[ext_resource type="Script" uid="uid://no5kxexda8e4" path="res://A Ultima Guarda Real/Personagens/arqueiro/braco.gd" id="3_jrn1t"]
+[ext_resource type="Shader" uid="uid://0nrap2s37q2n" path="res://A Ultima Guarda Real/Personagens/arqueiro/movimento_arco.gdshader" id="4_foeh0"]
+[ext_resource type="Texture2D" uid="uid://bhal0qqatww8x" path="res://A Ultima Guarda Real/Sprites/Tiny Swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Archer + Bow/Archer_Bow_Purple.png" id="5_5dhyk"]
+[ext_resource type="Texture2D" uid="uid://c1cag2ly6sk8b" path="res://A Ultima Guarda Real/Interface/dust.png" id="6_kti1q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1av4"]
+radius = 13.0
+height = 52.0
+
+[sub_resource type="Animation" id="Animation_viifn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bvu60"]
+resource_name = "andando"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_3lnpx"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_kti1q"]
+resource_name = "morte"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l53wo"]
+_data = {
+&"RESET": SubResource("Animation_viifn"),
+&"andando": SubResource("Animation_bvu60"),
+&"idle": SubResource("Animation_3lnpx"),
+&"morte": SubResource("Animation_kti1q")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l53wo"]
+shader = ExtResource("4_foeh0")
+
+[sub_resource type="Animation" id="Animation_5yfic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arco:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1v5h0"]
+resource_name = "ataque"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arco:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_flecha"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_l53wo"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arco:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_twgvh"]
+resource_name = "morte"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arco:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gh8sk"]
+_data = {
+&"RESET": SubResource("Animation_5yfic"),
+&"ataque": SubResource("Animation_1v5h0"),
+&"idle": SubResource("Animation_l53wo"),
+&"morte": SubResource("Animation_twgvh")
+}
+
+[sub_resource type="Curve" id="Curve_twgvh"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0.04494381), 0.0, 0.0, 0, 0, Vector2(0.24375002, 2), 0.0, 0.0, 0, 0, Vector2(0.74375, 0.92134845), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Arqueiro" type="CharacterBody2D" node_paths=PackedStringArray("poeira", "area_colisao")]
+y_sort_enabled = true
+texture_filter = 1
+collision_layer = 9
+collision_mask = 29
+script = ExtResource("1_gu6dc")
+poeira = NodePath("Poeira")
+area_colisao = NodePath("CollisionShape2D")
+
+[node name="Textura" type="Sprite2D" parent="."]
+texture = ExtResource("2_31vks")
+hframes = 6
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 19)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_f1av4")
+
+[node name="Animacao" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l53wo")
+}
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+
+[node name="braco" type="Node2D" parent="."]
+script = ExtResource("3_jrn1t")
+
+[node name="arco" type="Sprite2D" parent="braco"]
+material = SubResource("ShaderMaterial_l53wo")
+texture = ExtResource("5_5dhyk")
+hframes = 8
+vframes = 2
+
+[node name="Animacao_arco" type="AnimationPlayer" parent="braco"]
+libraries = {
+&"": SubResource("AnimationLibrary_gh8sk")
+}
+autoplay = "idle"
+
+[node name="Poeira" type="CPUParticles2D" parent="."]
+position = Vector2(-3, 30)
+emitting = false
+amount = 16
+texture = ExtResource("6_kti1q")
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_twgvh")
+
+[connection signal="animation_finished" from="braco/Animacao_arco" to="braco" method="_on_animacao_arco_animation_finished"]
